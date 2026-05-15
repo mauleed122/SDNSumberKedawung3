@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - Perpustakaan Digital SDN Sumber Kedawung 3</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <div class="layout">
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <img src="img/logotutwurihandayani.png" alt="Logo Tut Wuri" class="sidebar-logo" />
+        <div class="sidebar-school-name">
+          <span class="sidebar-title">SDN Sumber</span>
+          <span class="sidebar-title">Kedawung 3</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link active">
+              <i class="fa-solid fa-house"></i>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="visimisi.html" class="nav-link">
+              <i class="fa-solid fa-star"></i>
+              <span>Visi Misi</span>
+            </a>
+          </li>
+          <li class="nav-item has-dropdown">
+            <button class="nav-link dropdown-toggle">
+              <i class="fa-solid fa-book-open"></i>
+              <span>Kategori Buku</span>
+              <i class="fa-solid fa-chevron-down chevron"></i>
+            </button>
+            <ul class="dropdown-menu">
+              <li class="nav-item has-dropdown">
+                <button class="nav-link dropdown-toggle sub">
+                  <i class="fa-solid fa-bookmark"></i>
+                  <span>Non Fiksi</span>
+                  <i class="fa-solid fa-chevron-down chevron"></i>
+                </button>
+                <ul class="dropdown-menu sub-menu">
+                  <li class="nav-item has-dropdown">
+                    <button class="nav-link dropdown-toggle sub2">
+                      <i class="fa-solid fa-graduation-cap"></i>
+                      <span>Buku Pelajaran</span>
+                      <i class="fa-solid fa-chevron-down chevron"></i>
+                    </button>
+                    <ul class="dropdown-menu sub-menu2">
+                      <li><a href="buku.html?kategori=nonfiksi&sub=pelajaran&kelas=1" class="nav-link leaf"><span>Kelas 1</span></a></li>
+                      <li><a href="buku.html?kategori=nonfiksi&sub=pelajaran&kelas=2" class="nav-link leaf"><span>Kelas 2</span></a></li>
+                      <li><a href="buku.html?kategori=nonfiksi&sub=pelajaran&kelas=3" class="nav-link leaf"><span>Kelas 3</span></a></li>
+                      <li><a href="buku.html?kategori=nonfiksi&sub=pelajaran&kelas=4" class="nav-link leaf"><span>Kelas 4</span></a></li>
+                      <li><a href="buku.html?kategori=nonfiksi&sub=pelajaran&kelas=5" class="nav-link leaf"><span>Kelas 5</span></a></li>
+                      <li><a href="buku.html?kategori=nonfiksi&sub=pelajaran&kelas=6" class="nav-link leaf"><span>Kelas 6</span></a></li>
+                    </ul>
+                  </li>
+                  <li><a href="buku.html?kategori=nonfiksi&sub=umum" class="nav-link leaf"><i class="fa-solid fa-globe"></i><span>Pengetahuan Umum</span></a></li>
+                </ul>
+              </li>
+              <li class="nav-item has-dropdown">
+                <button class="nav-link dropdown-toggle sub">
+                  <i class="fa-solid fa-feather"></i>
+                  <span>Fiksi</span>
+                  <i class="fa-solid fa-chevron-down chevron"></i>
+                </button>
+                <ul class="dropdown-menu sub-menu">
+                  <li><a href="buku.html?kategori=fiksi&sub=cerpen" class="nav-link leaf"><i class="fa-solid fa-scroll"></i><span>Cerpen</span></a></li>
+                  <li><a href="buku.html?kategori=fiksi&sub=dongeng" class="nav-link leaf"><i class="fa-solid fa-wand-sparkles"></i><span>Dongeng</span></a></li>
+                  <li><a href="buku.html?kategori=fiksi&sub=komik" class="nav-link leaf"><i class="fa-solid fa-image"></i><span>Komik</span></a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="mading.html" class="nav-link">
+              <i class="fa-solid fa-newspaper"></i>
+              <span>Mading</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <span>#UPMNEXTLEVEL</span>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <main class="main-content">
+
+      <header class="topbar">
+        <button class="hamburger" id="hamburger" aria-label="Buka menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <span class="topbar-title">SDN Sumber Kedawung 3</span>
+        <a href="admin.html" class="topbar-admin-link" title="Admin">
+          <i class="fa-solid fa-user-shield"></i>
+        </a>
+      </header>
+
+      <section class="section active" id="section-home">
+        <div class="hero" style="background-image: url('img/bg1.jpeg');">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <div class="hero-logos">
+              <img src="img/diktisaintek.png" alt="Diktisaintek" />
+              <img src="img/logotutwurihandayani.png" alt="Tut Wuri Handayani" />
+              <img src="img/logouniv.png" alt="Logo Universitas" />
+            </div>
+            <h1 class="hero-school">SDN Sumber Kedawung 3</h1>
+            <h2 class="hero-subtitle">Perpustakaan Digital</h2>
+            <p class="hero-tagline">Halo, Sahabat Literasi!</p>
+            <p class="hero-desc">
+              Selamat datang di Perpustakaan Digital SDN Sumber Kedawung 3.
+              Di sini, kamu bisa membaca buku seru, belajar hal baru, dan menemukan banyak pengetahuan menarik.
+              Ayo mulai petualangan membaca dan jadilah anak hebat yang gemar belajar!
+            </p>
+            
+            <div class="hero-buttons">
+              <a href="buku.html" class="btn-hero-primary"><i class="fa-solid fa-book-open-reader"></i> Mulai Membaca</a>
+              <a href="visimisi.html" class="btn-hero-secondary"><i class="fa-solid fa-star"></i> Visi & Misi</a>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="home-body">
+          <div class="identity-card">
+            <h3 class="card-title">Identitas Sekolah</h3>
+            <table class="identity-table">
+              <tr><td>Nama Sekolah</td><td>SDN Sumber Kedawung 3</td></tr>
+              <tr><td>Dosen Pengampu</td><td>Dr. Ani Anjarwati, S.Pd., M.Pd.</td></tr>
+              <tr><td>Desain By</td><td>Kelompok 3</td></tr>
+            </table>
+          </div>
+
+          <div class="team-card">
+            <h3 class="card-title">Tim Penyusun</h3>
+            <ul class="team-list">
+              <li><span class="team-num">1</span><span>Dr. Ani Anjarwati, S.Pd., M.Pd. <em>(Dosen Pengampu)</em></span></li>
+              <li><span class="team-num">2</span><span>Ratu Syarifatul Maula <em>234420017</em></span></li>
+              <li><span class="team-num">3</span><span>Imelda Fatimatuzzahrok <em>234420024</em></span></li>
+              <li><span class="team-num">4</span><span>Aldy Yudya Wijaya <em>234420056</em></span></li>
+              <li><span class="team-num">5</span><span>Fairuz Zahiroh Inayah Ayu Gunawan <em>234420049</em></span></li>
+              <li><span class="team-num">6</span><span>Nurul Karomah <em>234420039</em></span></li>
+              <li><span class="team-num">7</span><span>Abel Nailah Salsabila <em>234420040</em></span></li>
+            </ul>
+            <div class="hashtag">#UPMNEXTLEVEL</div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

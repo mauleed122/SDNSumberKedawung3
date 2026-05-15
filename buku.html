@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Koleksi Buku - Perpustakaan Digital SDN Sumber Kedawung 3</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <div class="layout">
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <img src="img/logotutwurihandayani.png" alt="Logo Tut Wuri" class="sidebar-logo" />
+        <div class="sidebar-school-name">
+          <span class="sidebar-title">SDN Sumber</span>
+          <span class="sidebar-title">Kedawung 3</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">
+              <i class="fa-solid fa-house"></i>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="visimisi.html" class="nav-link">
+              <i class="fa-solid fa-star"></i>
+              <span>Visi Misi</span>
+            </a>
+          </li>
+          <li class="nav-item has-dropdown">
+            <button class="nav-link dropdown-toggle active">
+              <i class="fa-solid fa-book-open"></i>
+              <span>Kategori Buku</span>
+              <i class="fa-solid fa-chevron-down chevron"></i>
+            </button>
+            <ul class="dropdown-menu">
+              <li class="nav-item has-dropdown">
+                <button class="nav-link dropdown-toggle sub">
+                  <i class="fa-solid fa-bookmark"></i>
+                  <span>Non Fiksi</span>
+                  <i class="fa-solid fa-chevron-down chevron"></i>
+                </button>
+                <ul class="dropdown-menu sub-menu">
+                  <li class="nav-item has-dropdown">
+                    <button class="nav-link dropdown-toggle sub2">
+                      <i class="fa-solid fa-graduation-cap"></i>
+                      <span>Buku Pelajaran</span>
+                      <i class="fa-solid fa-chevron-down chevron"></i>
+                    </button>
+                    <ul class="dropdown-menu sub-menu2">
+                      <li><a href="buku.html?kategori=nonfiksi&sub=pelajaran&kelas=1" class="nav-link leaf"><span>Kelas 1</span></a></li>
+                      <li><a href="buku.html?kategori=nonfiksi&sub=pelajaran&kelas=2" class="nav-link leaf"><span>Kelas 2</span></a></li>
+                      <li><a href="buku.html?kategori=nonfiksi&sub=pelajaran&kelas=3" class="nav-link leaf"><span>Kelas 3</span></a></li>
+                      <li><a href="buku.html?kategori=nonfiksi&sub=pelajaran&kelas=4" class="nav-link leaf"><span>Kelas 4</span></a></li>
+                      <li><a href="buku.html?kategori=nonfiksi&sub=pelajaran&kelas=5" class="nav-link leaf"><span>Kelas 5</span></a></li>
+                      <li><a href="buku.html?kategori=nonfiksi&sub=pelajaran&kelas=6" class="nav-link leaf"><span>Kelas 6</span></a></li>
+                    </ul>
+                  </li>
+                  <li><a href="buku.html?kategori=nonfiksi&sub=umum" class="nav-link leaf"><i class="fa-solid fa-globe"></i><span>Pengetahuan Umum</span></a></li>
+                </ul>
+              </li>
+              <li class="nav-item has-dropdown">
+                <button class="nav-link dropdown-toggle sub">
+                  <i class="fa-solid fa-feather"></i>
+                  <span>Fiksi</span>
+                  <i class="fa-solid fa-chevron-down chevron"></i>
+                </button>
+                <ul class="dropdown-menu sub-menu">
+                  <li><a href="buku.html?kategori=fiksi&sub=cerpen" class="nav-link leaf"><i class="fa-solid fa-scroll"></i><span>Cerpen</span></a></li>
+                  <li><a href="buku.html?kategori=fiksi&sub=dongeng" class="nav-link leaf"><i class="fa-solid fa-wand-sparkles"></i><span>Dongeng</span></a></li>
+                  <li><a href="buku.html?kategori=fiksi&sub=komik" class="nav-link leaf"><i class="fa-solid fa-image"></i><span>Komik</span></a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="mading.html" class="nav-link">
+              <i class="fa-solid fa-newspaper"></i>
+              <span>Mading</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <span>#UPMNEXTLEVEL</span>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <main class="main-content">
+
+      <header class="topbar">
+        <button class="hamburger" id="hamburger" aria-label="Buka menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <span class="topbar-title">SDN Sumber Kedawung 3</span>
+        <a href="admin.html" class="topbar-admin-link" title="Admin">
+          <i class="fa-solid fa-user-shield"></i>
+        </a>
+      </header>
+
+      <section class="section active" id="section-buku" style="min-height: 80vh; display: flex; flex-direction: column;">
+        <div class="section-header">
+          <h2 class="section-title" id="buku-title">Pilih Kategori Buku</h2>
+          <p class="section-subtitle" id="buku-subtitle">Mau baca apa hari ini?</p>
+        </div>
+        
+        <div class="kategori-selector-container" id="kategoriSelector" style="display: none; flex-grow: 1; align-items: center; justify-content: center;">
+            <div class="kategori-cards">
+                <a href="buku.html?kategori=nonfiksi&sub=pelajaran" class="cat-card cat-pelajaran">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <h3>Buku Pelajaran</h3>
+                    <p>Materi kelas 1 sampai 6</p>
+                </a>
+                <a href="buku.html?kategori=nonfiksi&sub=umum" class="cat-card cat-umum">
+                    <i class="fa-solid fa-globe"></i>
+                    <h3>Pengetahuan Umum</h3>
+                    <p>Ensiklopedia & Wawasan</p>
+                </a>
+                <a href="buku.html?kategori=fiksi&sub=dongeng" class="cat-card cat-dongeng">
+                    <i class="fa-solid fa-wand-sparkles"></i>
+                    <h3>Dongeng</h3>
+                    <p>Cerita rakyat & legenda</p>
+                </a>
+                <a href="buku.html?kategori=fiksi&sub=cerpen" class="cat-card cat-cerpen">
+                    <i class="fa-solid fa-scroll"></i>
+                    <h3>Cerpen</h3>
+                    <p>Cerita pendek anak seru</p>
+                </a>
+                <a href="buku.html?kategori=fiksi&sub=komik" class="cat-card cat-komik">
+                    <i class="fa-solid fa-image"></i>
+                    <h3>Komik</h3>
+                    <p>Cerita bergambar edukatif</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="buku-grid" id="buku-grid" style="display: none;">
+          <div class="loading-state" style="text-align: center; width: 100%; padding: 50px; color: #666; grid-column: 1 / -1;">
+            <i class="fa-solid fa-spinner fa-spin fa-2x"></i>
+            <p style="margin-top: 15px;">Mengambil buku dari rak perpustakaan...</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <div class="baca-modal" id="bacaModal">
+      <div class="baca-modal-content">
+          <div class="baca-modal-header">
+              <h3 id="bacaJudul">Membaca Buku...</h3>
+              <button class="btn-close-modal" onclick="tutupBuku()"><i class="fa-solid fa-xmark"></i> Tutup</button>
+          </div>
+          <div class="baca-modal-body">
+              <iframe id="bacaIframe" src="" frameborder="0" allowfullscreen></iframe>
+          </div>
+      </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

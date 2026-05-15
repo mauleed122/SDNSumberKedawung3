@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mading Digital - SDN Sumber Kedawung 3</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <div class="layout">
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <img src="img/logotutwurihandayani.png" alt="Logo Tut Wuri" class="sidebar-logo" />
+        <div class="sidebar-school-name">
+          <span class="sidebar-title">SDN Sumber</span>
+          <span class="sidebar-title">Kedawung 3</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">
+              <i class="fa-solid fa-house"></i>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="visimisi.html" class="nav-link">
+              <i class="fa-solid fa-star"></i>
+              <span>Visi Misi</span>
+            </a>
+          </li>
+          <li class="nav-item has-dropdown">
+            <button class="nav-link dropdown-toggle">
+              <i class="fa-solid fa-book-open"></i>
+              <span>Kategori Buku</span>
+              <i class="fa-solid fa-chevron-down chevron"></i>
+            </button>
+            <ul class="dropdown-menu">
+              <li class="nav-item has-dropdown">
+                <button class="nav-link dropdown-toggle sub"><span>Non Fiksi</span></button>
+                <ul class="dropdown-menu sub-menu">
+                    <li><a href="buku.html?kategori=nonfiksi&sub=pelajaran" class="nav-link leaf"><span>Buku Pelajaran</span></a></li>
+                    <li><a href="buku.html?kategori=nonfiksi&sub=umum" class="nav-link leaf"><span>Pengetahuan Umum</span></a></li>
+                </ul>
+              </li>
+              <li class="nav-item has-dropdown">
+                <button class="nav-link dropdown-toggle sub"><span>Fiksi</span></button>
+                <ul class="dropdown-menu sub-menu">
+                    <li><a href="buku.html?kategori=fiksi&sub=cerpen" class="nav-link leaf"><span>Cerpen</span></a></li>
+                    <li><a href="buku.html?kategori=fiksi&sub=dongeng" class="nav-link leaf"><span>Dongeng</span></a></li>
+                    <li><a href="buku.html?kategori=fiksi&sub=komik" class="nav-link leaf"><span>Komik</span></a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="mading.html" class="nav-link active">
+              <i class="fa-solid fa-newspaper"></i>
+              <span>Mading</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="sidebar-footer"><span>#UPMNEXTLEVEL</span></div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+        <span class="topbar-title">Mading Digital</span>
+        <a href="admin.html" class="topbar-admin-link"><i class="fa-solid fa-user-shield"></i></a>
+      </header>
+
+      <section class="section active">
+        <div class="section-header">
+          <h2 class="section-title">Majalah Dinding</h2>
+          <p class="section-subtitle">Karya Kreatif & Informasi Siswa SDN Sumber Kedawung 3</p>
+        </div>
+
+        <div class="mading-grid" id="mading-grid">
+          <div class="loading-state" style="text-align: center; width: 100%; padding: 50px;">
+            <i class="fa-solid fa-spinner fa-spin fa-2x"></i>
+            <p style="margin-top: 15px;">Mengambil karya terbaru...</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="baca-modal" id="madingModal">
+      <div class="baca-modal-content" style="max-width: 700px; height: auto; max-height: 90vh;">
+          <div class="baca-modal-header">
+              <h3 id="madingModalTitle">Judul Mading</h3>
+              <button class="btn-close-modal" onclick="tutupMading()"><i class="fa-solid fa-xmark"></i> Tutup</button>
+          </div>
+          <div class="baca-modal-body" style="padding: 30px; overflow-y: auto; background: white;">
+              <img id="madingModalImg" src="" alt="Mading" style="width: 100%; border-radius: 15px; margin-bottom: 20px; display: none; object-fit: cover; max-height: 400px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+              <p style="color: #64748b; font-size: 14px; margin-bottom: 20px; font-weight: bold;" id="madingModalDate"><i class="fa-regular fa-calendar"></i> Tanggal</p>
+              <div id="madingModalText" style="color: #334155; line-height: 1.8; font-size: 16px; white-space: pre-wrap; font-family: 'Nunito', sans-serif;"></div>
+          </div>
+      </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

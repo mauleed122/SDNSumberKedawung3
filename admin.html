@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin - Perpustakaan Digital SDN Sumber Kedawung 3</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body class="admin-body">
+
+  <div class="admin-login-wrapper" id="loginWrapper">
+    <div class="login-card">
+      <div class="login-logo-row">
+        <img src="img/logotutwurihandayani.png" alt="Logo" class="login-logo" />
+      </div>
+      <h2 class="login-title">Admin Panel</h2>
+      <p class="login-sub">Perpustakaan Digital SDN Sumber Kedawung 3</p>
+      <div class="form-group">
+        <label for="loginEmail">Email</label>
+        <input type="email" id="loginEmail" placeholder="admin@email.com" autocomplete="username" />
+      </div>
+      <div class="form-group">
+        <label for="loginPassword">Password</label>
+        <div class="input-password-wrap">
+          <input type="password" id="loginPassword" placeholder="Password" autocomplete="current-password" />
+          <button type="button" class="toggle-pw" id="togglePw"><i class="fa-solid fa-eye"></i></button>
+        </div>
+      </div>
+      <p class="login-error" id="loginError"></p>
+      <button class="btn-primary full" id="btnLogin">
+        <i class="fa-solid fa-right-to-bracket"></i> Masuk
+      </button>
+      <a href="index.html" class="back-link">Kembali ke Beranda</a>
+    </div>
+  </div>
+
+  <div class="admin-dashboard" id="adminDashboard" style="display:none;">
+
+    <div class="sidebar-overlay" id="adminOverlay"></div>
+
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="admin-sidebar-header">
+        <img src="img/logotutwurihandayani.png" alt="Logo" class="sidebar-logo" />
+        <div>
+          <div class="sidebar-title">Admin Panel</div>
+          <div class="admin-email-label" id="adminEmailLabel"></div>
+        </div>
+      </div>
+      <nav class="admin-nav">
+        <button class="admin-nav-btn active" data-panel="tambah-buku">
+          <i class="fa-solid fa-book-medical"></i> Tambah Buku
+        </button>
+        <button class="admin-nav-btn" data-panel="tambah-mading">
+          <i class="fa-solid fa-newspaper"></i> Tambah Mading
+        </button>
+        <button class="admin-nav-btn" data-panel="kelola-buku">
+          <i class="fa-solid fa-list"></i> Kelola Buku
+        </button>
+        <button class="admin-nav-btn" data-panel="kelola-mading">
+          <i class="fa-solid fa-list-ul"></i> Kelola Mading
+        </button>
+      </nav>
+      <div class="admin-sidebar-footer">
+        <button class="btn-logout" id="btnLogout">
+          <i class="fa-solid fa-right-from-bracket"></i> Keluar
+        </button>
+        <a href="index.html" class="back-link small">Lihat Website</a>
+      </div>
+    </aside>
+
+    <div class="admin-main">
+      
+      <header class="topbar admin-topbar" id="adminTopbar">
+        <button class="hamburger" id="adminHamburger">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <span class="topbar-title">Dashboard Admin</span>
+      </header>
+
+      <div class="admin-panel active" id="panel-tambah-buku">
+        <h2 class="panel-title">Tambah Buku Baru</h2>
+        <div class="admin-form-card">
+          <div class="form-group">
+            <label for="bukuJudul">Judul Buku</label>
+            <input type="text" id="bukuJudul" placeholder="Masukkan judul buku" />
+          </div>
+          <div class="form-group">
+            <label for="bukuDrive">Link Google Drive</label>
+            <input type="url" id="bukuDrive" placeholder="https://drive.google.com/..." />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="bukuKategori">Kategori Utama</label>
+              <select id="bukuKategori">
+                <option value="">-- Pilih Kategori --</option>
+                <option value="non_fiksi">Non Fiksi</option>
+                <option value="fiksi">Fiksi</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="bukuSub">Sub Kategori</label>
+              <select id="bukuSub">
+                <option value="">-- Pilih Sub Kategori --</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group" id="kelasGroup" style="display:none;">
+            <label for="bukuKelas">Kelas</label>
+            <select id="bukuKelas">
+              <option value="">-- Pilih Kelas --</option>
+              <option value="1">Kelas 1</option>
+              <option value="2">Kelas 2</option>
+              <option value="3">Kelas 3</option>
+              <option value="4">Kelas 4</option>
+              <option value="5">Kelas 5</option>
+              <option value="6">Kelas 6</option>
+            </select>
+          </div>
+          <div class="form-actions">
+            <button class="btn-primary" id="btnSimpanBuku">
+              <i class="fa-solid fa-floppy-disk"></i> Simpan Buku
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="admin-panel" id="panel-tambah-mading">
+        <h2 class="panel-title">Tambah Konten Mading</h2>
+        <div class="admin-form-card">
+          <div class="form-group">
+            <label for="madingJudul">Judul Mading</label>
+            <input type="text" id="madingJudul" placeholder="Judul konten mading" />
+          </div>
+          <div class="form-group">
+            <label for="madingIsi">Isi / Deskripsi</label>
+            <textarea id="madingIsi" rows="6" placeholder="Tulis isi mading di sini..."></textarea>
+          </div>
+          <div class="form-group">
+            <label for="madingGambar">Link Gambar (opsional)</label>
+            <input type="url" id="madingGambar" placeholder="https://drive.google.com/... atau link gambar lain" />
+          </div>
+          <div class="form-actions">
+            <button class="btn-primary" id="btnSimpanMading">
+              <i class="fa-solid fa-floppy-disk"></i> Simpan Mading
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="admin-panel" id="panel-kelola-buku">
+        <h2 class="panel-title">Kelola Buku</h2>
+        <div class="table-wrapper">
+          <table class="admin-table" id="tableBuku">
+            <thead>
+              <tr>
+                <th>Judul</th>
+                <th>Kategori</th>
+                <th>Sub</th>
+                <th>Kelas</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="tableBukuBody">
+              <tr><td colspan="5" class="table-loading">Memuat data...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="admin-panel" id="panel-kelola-mading">
+        <h2 class="panel-title">Kelola Mading</h2>
+        <div class="table-wrapper">
+          <table class="admin-table" id="tableMading">
+            <thead>
+              <tr>
+                <th>Judul</th>
+                <th>Isi</th>
+                <th>Gambar</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="tableMadingBody">
+              <tr><td colspan="4" class="table-loading">Memuat data...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
