@@ -1,9 +1,17 @@
 // ==========================================
-// 1. INISIALISASI SUPABASE (Gunakan var)
+// 1. INISIALISASI SUPABASE (LEVEL MAX)
 // ==========================================
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
-var supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+let supabase;
+// Pengaman: Pastikan Supabase dari HTML sudah ke-load sebelum dipanggil
+if (window.supabase) {
+    supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+} else {
+    console.error("Gawat! SDK Supabase belum ter-load. Cek tag script di admin.html!");
+    alert("Gagal terhubung ke server. Pastikan koneksi internet Anda lancar.");
+}
 
 // ==========================================
 // 2. FITUR TOGGLE PASSWORD
@@ -25,6 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // 3. CEK SESSION & LOGIKA UI DASHBOARD
 // ==========================================
 document.addEventListener('DOMContentLoaded', async () => {
+    if (!supabase) return; // Stop kalau database gagal connect
+
     const { data: { session } } = await supabase.auth.getSession();
     
     const loginWrapper = document.getElementById('loginWrapper');
@@ -120,6 +130,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 const btnLogin = document.getElementById('btnLogin');
 if (btnLogin) {
     btnLogin.addEventListener('click', async () => {
+        if (!supabase) return alert("Database belum siap!");
+
         const email = document.getElementById('loginEmail').value;
         const password = document.getElementById('loginPassword').value;
         const loginError = document.getElementById('loginError');
